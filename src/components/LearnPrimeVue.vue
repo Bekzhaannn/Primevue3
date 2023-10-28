@@ -3,13 +3,21 @@
     <PDataTable :value="data">
       <PColumn v-for="column in columns" :key="column.field" :field="column.field" :header="column.header" />
     </PDataTable>
-  </div>
+  </div> 
+
+  <PInputText v-model="search"/>
+
+
 </template>
+
 
 <script setup>
 import { ref, onMounted } from 'vue'
 import PDataTable from 'primevue/datatable'
 import PColumn from 'primevue/column'
+import PInputText from 'primevue/inputtext'
+
+const search = ref ('')
 
 const data = [
   {
@@ -44,3 +52,4 @@ const columns = [
   },
 ]
 </script>
+
